@@ -3,10 +3,8 @@
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
 function concStr(text1, text2) {
-  let str1 = text1.slice(0, 2);
-  let str2 = text2.slice(-3);
-  let text3 = str1.concat(" ", str2);
-  console.log(text3);
+  const text3 = text1.substring(0, 2) + text2.substring(text2.length - 3);
+  console.log(text3.toUpperCase());
 }
 
 /* ESERCIZIO 2 (for)
@@ -18,7 +16,7 @@ function CreateArr10() {
     let temp = Math.floor(Math.random() * 101);
     N10Arr.push(temp);
   }
-  console.log(N10Arr);
+  return N10Arr;
 }
 
 /* ESERCIZIO 3 (filter)
@@ -38,10 +36,9 @@ function evenN() {
 function sumArray() {
   let somma = 0;
   const array1 = CreateArr10();
-  array1.forEach((element) => {
-    somma += element;
+  array1.forEach((array1) => {
+    somma += array1;
   });
-  console.log(somma);
   return somma;
 }
 
@@ -58,10 +55,11 @@ function sumReduce() {
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 function arraymap() {
-  const array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const array1 = CreateArr10();
+  console.log(array1);
   const n = 4;
   const MappedArray = array1.map((array1) => array1 + n);
-  console.log(MappedArray);
+  return MappedArray;
 }
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
@@ -78,7 +76,9 @@ function mapString() {
 function N1to99() {
   const array99 = [];
   for (let i = 1; i < 100; i++) {
-    array99.push(i);
+    if (i % 2 != 0) {
+      array99.push(i);
+    }
   }
   console.log(array99);
 }
